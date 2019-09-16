@@ -4,13 +4,6 @@
 " 处理 Gnome 终端不能使用 alt 快捷键
 " 参考：http://landcareweb.com/questions/8623/altjian-kuai-jie-jian-bu-gua-yong-yu-dai-you-vimde-gnomezhong-duan
 "==============================================================================
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 set timeout ttimeoutlen=50
 
 
@@ -24,6 +17,7 @@ set timeout ttimeoutlen=50
 
 " 关闭兼容模式
 set nocompatible
+set backspace=2
 
 set number " 设置绝对行号
 set relativenumber " 设置相对行号
